@@ -23,15 +23,59 @@ section {
 }
 
 .card {
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-left: 4px solid #007bff;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
 }
 
 .card:hover {
     transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
 
 .card:focus-within {
     outline: 2px solid #0d6efd;
+}
+
+.card-body {
+    padding: 1.5rem;
+    background-color: #f8f9fa;
+    border-radius: 0 4px 4px 0;
+}
+
+.card-title {
+    color: #007bff;
+    margin-bottom: 0.5rem;
+}
+
+.card:nth-child(2n) {
+    border-left-color: #6f42c1;
+}
+
+.card:nth-child(2n) .card-title {
+    color: #6f42c1;
+}
+
+.card:nth-child(3n) {
+    border-left-color: #28a745;
+}
+
+.card:nth-child(3n) .card-title {
+    color: #28a745;
+}
+
+.card:nth-child(4n) {
+    border-left-color: #fd7e14;
+}
+
+.card:nth-child(4n) .card-title {
+    color: #fd7e14;
+}
+
+/* Make sure dark mode still looks good */
+body.dark-mode .card-body {
+    background-color: #1e1e1e;
 }
 
 /* Screen reader only class */
@@ -153,25 +197,31 @@ body.dark-mode footer {
     background-color: #000 !important;
 }
 
+/* Update accessibility panel colors for dark mode */
+body.dark-mode .a11y-panel {
+    background-color: #1e1e1e;
+    color: #e0e0e0;
+    border-color: #333;
+}
+
+body.dark-mode .a11y-panel h3 {
+    border-color: #444;
+}
+
 /* High Contrast Mode */
 body.high-contrast {
     background-color: #000;
     color: #fff;
 }
 
-body.high-contrast a,
-body.high-contrast .nav-link {
-    color: #ffff00 !important;
-}
-
-body.high-contrast .btn-outline-light {
-    color: #ffff00;
-    border-color: #ffff00;
-}
-
 body.high-contrast .card {
     background-color: #000;
     border: 2px solid #fff;
+    color: #fff; /* Ensure text inside cards is white */
+}
+
+body.high-contrast .card-body {
+    background-color: #000; /* Override the light background of card bodies */
 }
 
 body.high-contrast .list-group-item {
@@ -192,11 +242,50 @@ body.high-contrast h4 {
     color: #ffff00;
 }
 
+body.high-contrast .card-text,
+body.high-contrast .card-subtitle,
+body.high-contrast p,
+body.high-contrast .text-muted {
+    color: #fff !important;
+}
+
+body.high-contrast .navbar-dark .navbar-nav .nav-link {
+    color: #ffff00 !important;
+}
+
+body.high-contrast footer p {
+    color: #fff !important;
+}
+
+/* Update accessibility panel colors for high contrast mode */
+body.high-contrast .a11y-panel {
+    background-color: #000;
+    color: #fff;
+    border: 2px solid #fff;
+}
+
+body.high-contrast .a11y-panel h3 {
+    border-color: #fff;
+    color: #ffff00;
+}
+
+body.high-contrast .form-check-label {
+    color: #fff;
+}
+
 /* Font size adjustment */
 body.font-size-large {
     font-size: 120%;
 }
 
+body.font-size-large .lead {
+    font-size: 120%;
+}
+
 body.font-size-x-large {
+    font-size: 140%;
+}
+
+body.font-size-x-large .lead {
     font-size: 140%;
 }
