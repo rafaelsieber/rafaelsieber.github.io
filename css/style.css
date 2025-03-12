@@ -60,3 +60,143 @@ a:focus, button:focus {
         font-size: 1rem;
     }
 }
+
+/* Accessibility Menu Styles */
+.accessibility-menu {
+    position: fixed;
+    right: 20px;
+    top: 20px;
+    z-index: 1050;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+.a11y-toggle {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    transition: background-color 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.a11y-toggle:hover {
+    background-color: #0069d9;
+}
+
+.a11y-panel {
+    position: absolute;
+    right: 0;
+    top: 54px;
+    width: 280px;
+    background: white;
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+    display: none;
+    border: 1px solid #ddd;
+}
+
+.a11y-panel h3 {
+    margin-top: 0;
+    font-size: 1.2rem;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 8px;
+    margin-bottom: 10px;
+}
+
+.a11y-options {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.a11y-option {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Dark Mode Styles */
+body.dark-mode {
+    background-color: #121212;
+    color: #e0e0e0;
+}
+
+body.dark-mode .card {
+    background-color: #1e1e1e;
+    color: #e0e0e0;
+    border-color: #333;
+}
+
+body.dark-mode .card-subtitle {
+    color: #aaa !important;
+}
+
+body.dark-mode .list-group-item {
+    background-color: #1e1e1e;
+    color: #e0e0e0;
+    border-color: #333;
+}
+
+body.dark-mode .navbar {
+    background-color: #0d47a1 !important;
+}
+
+body.dark-mode footer {
+    background-color: #000 !important;
+}
+
+/* High Contrast Mode */
+body.high-contrast {
+    background-color: #000;
+    color: #fff;
+}
+
+body.high-contrast a,
+body.high-contrast .nav-link {
+    color: #ffff00 !important;
+}
+
+body.high-contrast .btn-outline-light {
+    color: #ffff00;
+    border-color: #ffff00;
+}
+
+body.high-contrast .card {
+    background-color: #000;
+    border: 2px solid #fff;
+}
+
+body.high-contrast .list-group-item {
+    background-color: #000;
+    color: #fff;
+    border: 1px solid #fff;
+}
+
+body.high-contrast .navbar {
+    background-color: #000 !important;
+    border-bottom: 2px solid #fff;
+}
+
+body.high-contrast h1, 
+body.high-contrast h2, 
+body.high-contrast h3,
+body.high-contrast h4 {
+    color: #ffff00;
+}
+
+/* Font size adjustment */
+body.font-size-large {
+    font-size: 120%;
+}
+
+body.font-size-x-large {
+    font-size: 140%;
+}

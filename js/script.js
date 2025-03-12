@@ -52,4 +52,107 @@ document.addEventListener('DOMContentLoaded', function() {
             this.setAttribute('aria-current', 'page');
         });
     });
+
+    // Accessibility Menu Functionality
+    
+    // Toggle accessibility panel
+    const a11yToggle = document.querySelector('.a11y-toggle');
+    const a11yPanel = document.querySelector('.a11y-panel');
+    
+    a11yToggle.addEventListener('click', function() {
+        const isExpanded = this.getAttribute('aria-expanded') === 'true';
+        this.setAttribute('aria-expanded', !isExpanded);
+        a11yPanel.style.display = isExpanded ? 'none' : 'block';
+    });
+
+    // Close panel when clicking outside
+    document.addEventListener('click', function(event) {
+        if (!a11yPanel.contains(event.target) && !a11yToggle.contains(event.target)) {
+            a11yPanel.style.display = 'none';
+            a11yToggle.setAttribute('aria-expanded', 'false');
+        }
+    });
+
+    // Font size controls
+    const fontIncrease = document.getElementById('font-increase');
+    const fontDecrease = document.getElementById('font-decrease');
+    const fontReset = document.getElementById('font-reset');
+    
+    fontIncrease.addEventListener('click', function() {
+        if (document.body.classList.contains('font-size-large')) {
+            document.body.classList.remove('font-size-large');
+            document.body.classList.add('font-size-x-large');
+            localStorage.setItem('fontSize', 'x-large');
+        } else if (!document.body.classList.contains('font-size-x-large')) {
+            document.body.classList.add('font-size-large');
+            localStorage.setItem('fontSize', 'large');
+        }
+    });
+    
+    fontDecrease.addEventListener('click', function() {
+        if (document.body.classList.contains('font-size-x-large')) {
+            document.body.classList.remove('font-size-x-large');
+            document.body.classList.add('font-size-large');
+            localStorage.setItem('fontSize', 'large');
+        } else if (document.body.classList.contains('font-size-large')) {
+            document.body.classList.remove('font-size-large');
+            localStorage.setItem('fontSize', 'normal');
+        }
+    });
+    
+    fontReset.addEventListener('click', function() {
+        document.body.classList.remove('font-size-large', 'font-size-x-large');
+        localStorage.setItem('fontSize', 'normal');
+    });
+    
+    // Dark mode toggle
+    const darkModeToggle = document.getElementById('dark-mode-toggle');
+    
+    darkModeToggle.addEventListener('change', function() {
+        if (this.checked) {
+            document.body.classList.add('dark-mode');
+            localStorage.setItem('darkMode', 'enabled');
+        } else {
+            document.body.classList.remove('dark-mode');
+            localStorage.setItem('darkMode', 'disabled');
+        }
+    });
+    
+    // High contrast toggle
+    const highContrastToggle = document.getElementById('high-contrast-toggle');
+    
+    highContrastToggle.addEventListener('change', function() {
+        if (this.checked) {
+            document.body.classList.add('high-contrast');
+            localStorage.setItem('highContrast', 'enabled');
+        } else {
+            document.body.classList.remove('high-contrast');
+            localStorage.setItem('highContrast', 'disabled');
+        }
+    });
+    
+    // Load saved preferences
+    function loadSavedPreferences() {
+        // Font size
+        const savedFontSize = localStorage.getItem('fontSize');
+        if (savedFontSize === 'large') {
+            document.body.classList.add('font-size-large');
+        } else if (savedFontSize === 'x-large') {
+            document.body.classList.add('font-size-x-large');
+        }
+        
+        // Dark mode
+        if (localStorage.getItem('darkMode') === 'enabled') {
+            darkModeToggle.checked = true;
+            document.body.classList.add('dark-mode');
+        }
+        
+        // High contrast
+        if (localStorage.getItem('highContrast') === 'enabled') {
+            highContrastToggle.checked = true;
+            document.body.classList.add('high-contrast');
+        }
+    }
+    
+    loadSavedPreferences();
 });
