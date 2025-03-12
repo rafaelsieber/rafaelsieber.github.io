@@ -44,6 +44,11 @@ section {
     border-radius: 0 4px 4px 0;
 }
 
+/* Add this to ensure list-group inside cards have white background */
+.card .list-group-item {
+    background-color: #fff;
+}
+
 .card-title {
     color: #007bff;
     margin-bottom: 0.5rem;
@@ -189,6 +194,11 @@ body.dark-mode .list-group-item {
     border-color: #333;
 }
 
+/* Also update this to ensure list-group items in cards have correct dark mode background */
+body.dark-mode .card .list-group-item {
+    background-color: #1e1e1e;
+}
+
 body.dark-mode .navbar {
     background-color: #0d47a1 !important;
 }
@@ -228,6 +238,11 @@ body.high-contrast .list-group-item {
     background-color: #000;
     color: #fff;
     border: 1px solid #fff;
+}
+
+/* And ensure high contrast mode also applies correctly to list-group items in cards */
+body.high-contrast .card .list-group-item {
+    background-color: #000;
 }
 
 body.high-contrast .navbar {
