@@ -186,4 +186,48 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     loadSavedPreferences();
+
+    // Hide experience section by default and add show/hide functionality
+    const experienceSection = document.getElementById('experience');
+    experienceSection.classList.add('d-none'); // Hide initially
+    
+    // Move the toggle button to appear inside the timeline section
+    const toggleExperienceBtn = document.getElementById('toggle-experience-btn');
+    const timelineSection = document.getElementById('timeline');
+    
+    if (toggleExperienceBtn && timelineSection) {
+        // Move the button to the end of the timeline section
+        const timelineContainer = document.querySelector('.interactive-timeline-container');
+        if (timelineContainer) {
+            // Ensure the button is in the right location
+            const btnContainer = document.querySelector('.text-center.mt-4');
+            if (btnContainer && btnContainer.contains(toggleExperienceBtn)) {
+                // The button is already in the correct container within the timeline section
+                // No need to move it
+            }
+        }
+    }
+    
+    // The rest of the toggle functionality remains unchanged
+    if (toggleExperienceBtn) {
+        toggleExperienceBtn.addEventListener('click', function() {
+            experienceSection.classList.toggle('d-none');
+            
+            // Update button text
+            this.textContent = experienceSection.classList.contains('d-none') 
+                ? 'Show Full Experience List' 
+                : 'Hide Experience List';
+                
+            // Smooth scroll to experience section when showing it
+            if (!experienceSection.classList.contains('d-none')) {
+                const headerHeight = document.querySelector('.navbar').offsetHeight;
+                const targetPosition = experienceSection.getBoundingClientRect().top + window.pageYOffset - headerHeight;
+                
+                window.scrollTo({
+                    top: targetPosition,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    }
 });

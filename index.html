@@ -79,7 +79,7 @@
                         <a class="nav-link active" href="#about" aria-current="page">About</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#experience">Experience</a>
+                        <a class="nav-link" href="#timeline">Timeline</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#projects">Projects</a>
@@ -109,30 +109,73 @@
             </div>
         </section>
 
+        <!-- New Timeline Section -->
+        <section id="timeline" class="mb-5">
+            <h2 class="border-bottom pb-2"><i class="fas fa-history me-2"></i>Career Timeline</h2>
+            <p class="lead">My professional journey visualized</p>
+            
+            <div class="interactive-timeline-container">
+                <div class="timeline-navigation">
+                    <button class="btn btn-sm btn-outline-primary" id="timeline-prev" aria-label="Previous timeline item">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <div class="timeline-years">
+                        <div class="timeline-track">
+                            <!-- Timeline markers will be added by JavaScript -->
+                        </div>
+                    </div>
+                    <button class="btn btn-sm btn-outline-primary" id="timeline-next" aria-label="Next timeline item">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+                
+                <div class="timeline-content">
+                    <!-- Timeline content will be added by JavaScript -->
+                </div>
+
+                <div class="text-center mt-4">
+                    <button id="toggle-experience-btn" class="btn btn-outline-primary">
+                        Show Full Experience List
+                    </button>
+                </div>
+            </div>
+        </section>
+
         <section id="experience" class="mb-5">
             <h2 class="border-bottom pb-2"><i class="fas fa-briefcase me-2"></i>Experience</h2>
             <div class="card mb-3">
                 <div class="card-body">
                     <h3 class="card-title">FIOCRUZ</h3>
-                    <h4 class="card-subtitle mb-2 text-muted">Designer & Developer</h4>
+                    <h4 class="card-subtitle mb-2 text-muted">2024 - Present</h4>
+                    <h5 class="card-subtitle mb-2 text-muted">Designer & Developer</h5>
                     <p class="card-text">Working on design and development projects, creating accessible digital solutions and interfaces.</p>
+                </div>
+            </div>
+            <div class="card mb-3">
+                <div class="card-body">
+                    <h3 class="card-title">CLIPESCOLA</h3>
+                    <h4 class="card-subtitle mb-2 text-muted">2022 - 2024</h4>
+                    <h5 class="card-subtitle mb-2 text-muted">FullStack Java Developer</h5>
+                    <p class="card-text">FullStack Java Developer</p>
                 </div>
             </div>
             <div class="card mb-3">
                 <div class="card-body">
                     <h3 class="card-title">ELEVA EDUCATION</h3>
                     <h4 class="card-subtitle mb-2 text-muted">2014 - 2020</h4>
+                    <h5 class="card-subtitle mb-2 text-muted">Administrative</h5>
                     <ul class="card-text">
-                        <li>[2019 - 2020] Director - Pensi Madureira</li>
-                        <li>[2018] Assistant Director - Pensi Friburgo</li>
-                        <li>[2016-17] Administrative support - IT</li>
+                        <li>Director - Pensi Madureira</li>
+                        <li>Assistant Director - Pensi Friburgo</li>
+                        <li>Administrative support - IT</li>
                     </ul>
                 </div>
             </div>
             <div class="card mb-3">
                 <div class="card-body">
                     <h3 class="card-title">RW CONSULTORIA / NOVARUM</h3>
-                    <h4 class="card-subtitle mb-2 text-muted">2010 - 2013</h4>
+                    <h4 class="card-subtitle mb-2 text-muted">2010 - 2014</h4>
+                    <h5 class="card-subtitle mb-2 text-muted">Web Developer</h5>
                     <p class="card-text">Website, SEO and Marketing</p>
                 </div>
             </div>
@@ -140,6 +183,7 @@
                 <div class="card-body">
                     <h3 class="card-title">FIOCRUZ</h3>
                     <h4 class="card-subtitle mb-2 text-muted">2007 - 2010</h4>
+                    <h5 class="card-subtitle mb-2 text-muted">Web Designer</h5>
                     <p class="card-text">FrontEnd • HTML (W3C and WCAG), Javascript (AJAX and effects specializing in the Mootools Framework) and Template Toolkit 2 (Perl).</p>
                 </div>
             </div>
@@ -147,7 +191,8 @@
                 <div class="card-body">
                     <h3 class="card-title">Estrela Guia Consulting & Services</h3>
                     <h4 class="card-subtitle mb-2 text-muted">2004 - 2006</h4>
-                    <p class="card-text">Web Designer</p>
+                    <h5 class="card-subtitle mb-2 text-muted">Web Designer</h5>
+                    <p class="card-text">FrontEnd • HTML, CSS, Javascript, Flash and PHP.</p>
                 </div>
             </div>
         </section>
@@ -377,5 +422,6 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="js/script.js"></script>
+    <script src="js/timeline.js"></script>
 </body>
 </html>
