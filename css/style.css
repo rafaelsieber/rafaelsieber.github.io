@@ -9,7 +9,7 @@ body {
 }
 
 section {
-    scroll-margin-top: 70px;
+    scroll-margin-top: 80px; /* Increased to account for navbar height + some padding */
 }
 
 /* Accessibility improvements */
@@ -468,4 +468,32 @@ body.high-contrast .timeline-marker::after {
 
 #toggle-experience-btn:hover {
     transform: translateY(-2px);
+}
+
+/* Remove alternating section background colors */
+main section:nth-child(odd) {
+    background-color: transparent;
+}
+
+/* Dark mode adjustments for section backgrounds */
+body.dark-mode main section:nth-child(odd) {
+    background-color: transparent;
+}
+
+/* High contrast mode adjustments for section backgrounds */
+body.high-contrast main section:nth-child(odd) {
+    background-color: transparent;
+    /* Keep the borders for accessibility in high contrast mode */
+    border-top: 1px solid #fff;
+    border-bottom: 1px solid #fff;
+}
+
+/* Adjust section margins and padding */
+main section {
+    margin-bottom: 0; /* Remove the existing bottom margin */
+    padding: 2rem 0;   /* Add consistent padding */
+}
+
+main .container {
+    padding-bottom: 0; /* Remove any container bottom padding that might interfere */
 }
