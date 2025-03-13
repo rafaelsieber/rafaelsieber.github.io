@@ -497,3 +497,20 @@ main section {
 main .container {
     padding-bottom: 0; /* Remove any container bottom padding that might interfere */
 }
+
+/* Mobile text justification */
+@media (max-width: 767px) {
+    p, .card-text, .lead {
+        text-align: justify;
+    }
+    
+    /* Keep lists aligned properly */
+    ul, ol {
+        text-align: left;
+    }
+    
+    /* Keep headings centered if they were already centered */
+    .text-center h1, .text-center h2, .text-center h3, .text-center h4, .text-center h5, .text-center h6 {
+        text-align: center;
+    }
+}
