@@ -498,11 +498,9 @@ main .container {
     padding-bottom: 0; /* Remove any container bottom padding that might interfere */
 }
 
-/* Mobile text justification */
+/* Mobile text justification - Remove justify alignment */
 @media (max-width: 767px) {
-    p, .card-text, .lead {
-        text-align: justify;
-    }
+    /* Remove the text-align: justify that was here previously */
     
     /* Keep lists aligned properly */
     ul, ol {
