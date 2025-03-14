@@ -512,3 +512,8 @@ main .container {
         text-align: center;
     }
 }
+
+/* App icon styling */
+.app-icon {
+    max-width: 100px;
+}
